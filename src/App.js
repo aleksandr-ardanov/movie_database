@@ -81,7 +81,14 @@ function App() {
           <p>Year: {movie.year}</p>
           <p>Run time (hh:mm:ss): {toTime(movie.run_time)}</p>
           <p>Rating: {movie.rating}</p>
-          {movie.main_actors.length !== 0 ? <p>Main Actors: {movie.main_actors}</p> : ''}
+          {movie.main_actors.length !== 0 ? <p>Main Actors: {movie.main_actors.map((act,i) => {
+            if (movie.main_actors.length === i + 1){
+              return (act)
+            }
+            else{
+              return (act + ', ')
+            }
+          })}</p> : ''}
           <div className='ownerButtons'>
 					<Link to={`/edit/${movie.movie_id}`}><Button color="primary" variant= "contained">Edit/Delete</Button></Link> 
 				  </div>
