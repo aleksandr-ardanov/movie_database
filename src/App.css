@@ -2,37 +2,387 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  background-color: black;
+  text-align: left;
+  font-size: calc(10px + 2vmin);
+}
+header h1 {
+  margin-left: 10%;
+  color: white;
+}
+.headerLinks {
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.movie {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  font-weight: bold;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.movie p {
+  margin: 1%;
+  font-size: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+img {
+  box-sizing: content-box;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 18px 18px 0 0;
+  height: 300px;
+}
+.image h1 {
+  margin: 0;
+  color: black;
+  text-transform: capitalize;
+  font-size: 2vw;
+}
+.image {
+  height: 100%;
+}
+.info {
+  display: flex;
+  flex-flow: column;
+  margin-top: 15%;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: white;
+}
+.genres {
+  padding-bottom: 2%;
+}
+.filtersSort {
+  display: flex;
+}
+
+button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(180deg, #4b91f7 0%, #367af6 100%);
+  background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
+    inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
+    0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
+    0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
+
+.fSort {
+  width: 15%;
+  margin-left: 3%;
+  height: auto;
+}
+.fButton {
+  margin: 0.1%;
+}
+.check_all {
+  padding-bottom: 2%;
+  margin: 1%;
+  font-size: 3vw;
+}
+.createMovieForm {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+.childCreate {
+  width: 30%;
+  text-align: center;
+  margin: auto;
+}
+
+.submitMovieBtn {
+  margin: 1% auto;
+}
+
+.deleteMovieButton {
+  margin-bottom: 5%;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.pagination div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: a;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.pagination div:first-of-type {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 12%;
+}
+
+.pagination div:nth-of-type(2) {
+  width: 40%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@import "~antd/dist/antd.css";
+.export-form {
+  width: 96%;
+  text-align: left;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.158);
+}
+.export-form .ant-select {
+  width: 98%;
+  margin-bottom: 1rem;
+}
+.ant-picker {
+  margin-bottom: 1rem;
+}
+.form-inputs {
+  width: 98%;
+}
+.header-top {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  width: 100%;
+}
+#title {
+  margin-top: 0.11rem;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  color: #000;
+}
+.panel {
+  background-color: rgba(0, 0, 0, 0.158);
+}
+.extra {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  text-align: left;
+}
+.header-checkbox {
+  margin-left: 1.4rem;
+}
+.pagination {
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem;
+  padding-bottom: 2.5vh;
+}
+
+span.ant-tag.ant-tag-checkable:hover {
+  color: #003767;
+}
+
+.ant-tag-checkable-checked {
+  background-color: #003767;
+}
+
+span.ant-tag.ant-tag-checkable-checked:hover {
+  color: #ffffff;
+}
+
+.ant-pagination-item a:hover {
+  color: #003767;
+  border-color: #003767;
+}
+
+.ant-pagination-item-active a {
+  color: #003767;
+  border-color: #003767;
+}
+
+/* Laptop Large */
+@media only screen and (max-width: 1440px) {
+  .export-form {
+    width: 96%;
+    text-align: left;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.158);
   }
-  to {
-    transform: rotate(360deg);
+  .export-form .ant-select {
+    margin-bottom: 1rem;
+  }
+  .ant-picker {
+    margin-bottom: 1rem;
+  }
+  .header-top {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  #title {
+    margin-top: 0.11rem;
+    margin-left: 1.5rem;
+    font-size: 1rem;
+  }
+  .panel {
+    background-color: rgba(0, 0, 0, 0.158);
+  }
+  .extra {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    text-align: left;
+  }
+  .header-checkbox {
+    margin-left: 1.4rem;
+  }
+  .pagination {
+    width: 100%;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 1rem;
+    padding-bottom: 2.5vh;
+  }
+
+  span.ant-tag.ant-tag-checkable:hover {
+    color: #003767;
+  }
+
+  .ant-tag-checkable-checked {
+    background-color: #003767;
+  }
+
+  span.ant-tag.ant-tag-checkable-checked:hover {
+    color: #ffffff;
+  }
+
+  .ant-pagination-item a:hover {
+    color: #003767;
+    border-color: #003767;
+  }
+
+  .ant-pagination-item-active a {
+    color: #003767;
+    border-color: #003767;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .export-form {
+    width: 96%;
+    text-align: left;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.158);
+  }
+  .export-form .ant-select {
+    margin-bottom: 1rem;
+  }
+  .ant-picker {
+    margin-bottom: 1rem;
+  }
+  .header-top {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  #title {
+    margin-top: 0.11rem;
+    margin-left: 1.5rem;
+    font-size: 1rem;
+  }
+  .panel {
+    background-color: rgba(0, 0, 0, 0.158);
+  }
+  .extra {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    text-align: left;
+  }
+  .header-checkbox {
+    margin-left: 1.4rem;
+  }
+  .pagination {
+    width: 100%;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 1rem;
+    padding-bottom: 2.5vh;
+  }
+
+  span.ant-tag.ant-tag-checkable:hover {
+    color: #003767;
+  }
+
+  .ant-tag-checkable-checked {
+    background-color: #003767;
+  }
+
+  span.ant-tag.ant-tag-checkable-checked:hover {
+    color: #ffffff;
+  }
+
+  .ant-pagination-item a:hover {
+    color: #003767;
+    border-color: #003767;
+  }
+
+  .ant-pagination-item-active a {
+    color: #003767;
+    border-color: #003767;
   }
 }
