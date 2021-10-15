@@ -60,7 +60,7 @@ const CreateMovie = (props) => {
         </h1>
         <form onSubmit = {handleSubmit} className = "createMovieForm">
             <h2>Title</h2>
-              <input className = "childCreate" value = {title} onChange = {handleChange} name='title' type='text'/>
+              <input className = "childCreate" maxlength = '100' value = {title} onChange = {handleChange} name='title' type='text' placeholder = "max length 100"/>
             <h2>Genre</h2>
               <select className = "childCreate"  value = {genre} onChange = {handleChange} name='genre' type='text'>
                 <option value = ''>Select Genre</option>
@@ -73,7 +73,7 @@ const CreateMovie = (props) => {
                 <option value = 'romance'>Romance</option>
               </select>
             <h2>Year</h2>
-              <input className = "childCreate" value = {year} onChange = {handleChange} name='year' type="number" placeholder = 'min 1888'/>
+              <input className = "childCreate" min='1888' value = {year} onChange = {handleChange} name='year' type="number" placeholder = 'min 1888'/>
             <h2>Run time</h2>
               <input className = "childCreate" value = {run_time} onChange = {handleChange} name='run_time' type="text" placeholder = "format hh:mm:ss"/>
             <h2>Rating</h2>
