@@ -8,6 +8,8 @@ import EditMovie from './components/EditMovie';
 import Filters from './components/Filters';
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button';
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
   const [itemsPerPage] = useState(10);
   const [movies,setMovies] = useState([]) 
   const [data,setData] = useState([])
+  const [loading,setLoading] = useState(true)
+
   const onChange = page => {
     setCurrentPage(page);
   };
@@ -29,9 +33,11 @@ function App() {
   const currentMovies = data.slice(indexOfFirstMovie, indexOfLastMovie);
 
   useEffect(() => {
+    setLoading(true)
     axios.get(`${process.env.REACT_APP_DOMAIN}/movies?api_key=${process.env.REACT_APP_API_KEY}`)
     .then(res => {
       setMovies(res.data.movies)
+      setLoading(false)
     })
     .catch(err => {
       console.log(err.response)
@@ -48,7 +54,16 @@ function App() {
       <h1>no movies to display</h1>
     </div>
     )
-    
+
+  const load = () => {
+    return (
+      <div className='loadingBar'>
+      <h2>Loading...</h2>
+      <CircularProgress/>
+      </div>
+    )
+  }
+  
   function toTime(time) {
     let hours   = Math.floor(time / 3600);
     let minutes = Math.floor((time - (hours * 3600)) / 60);
@@ -117,7 +132,7 @@ function App() {
         <Route path="/">
           <Filters movies = {movies} data = {data} setData = {setData} setCurrentPage = {setCurrentPage}/>
           <div className = 'movies'>
-          {data.length === 0 ? noMovies : list}
+          {loading ? load() : data.length === 0 ? noMovies : list}
           </div>
           <section className="pagination">
               <Pagination
