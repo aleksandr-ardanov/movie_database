@@ -41,6 +41,7 @@ function App() {
     })
     .catch(err => {
       console.log(err.response)
+      setLoading(false)
     })
   },[])
 
