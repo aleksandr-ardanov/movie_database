@@ -15,7 +15,7 @@ function App() {
 
   const linkStyle = {
     margin: "1rem",
-    "font-size": "2rem",
+    "fontSize": "2rem",
     textDecoration: "none",
   };
 
